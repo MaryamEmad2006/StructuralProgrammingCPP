@@ -1,277 +1,101 @@
-# StructuralProgrammingC++
-
-## Course: Structural Programming in C++
-
-This repository contains lectures, examples, assignments, labs, and projects for the **Structural Programming in C++** course.
-
-The course introduces students to problem-solving and program design using the structured (procedural) programming paradigm in C++.
-
-> ⚠️ This course focuses on structured programming concepts. Object-Oriented Programming (OOP) topics are intentionally minimized.
-
----
-
-# Course Objectives
-
-By the end of this course, students will be able to:
-
-- Understand fundamental programming concepts
-- Write structured C++ programs
-- Apply modular programming techniques
-- Use functions effectively
-- Work with arrays, strings, and vectors
-- Understand memory management basics
-- Use pointers and dynamic memory
-- Perform file input/output operations
-- Debug and test C++ programs
-- Build complete console-based applications
-
----
-
-# Topics Covered
-
----
-
-## Introduction to Programming
-- What is programming?
-- Problem-solving methodology
-- Algorithms
-- Flowcharts
-- Pseudocode
-- Compilation process
-- Syntax vs Logical errors
-
----
-
-## Basics of C++
-- Structure of a C++ program
-- `#include`
-- `main()` function
-- Namespaces
-- Comments
-- Variables and data types
-- Constants
-- Type casting
-- Input and Output (`cin`, `cout`)
-- Formatting output
-
----
-
-## Operators and Expressions
-- Arithmetic operators
-- Relational operators
-- Logical operators
-- Assignment operators
-- Increment / Decrement
-- Bitwise operators (basic)
-- Operator precedence
-
----
-
-## Control Structures
-- `if`
-- `if-else`
-- Nested conditions
-- `switch`
-- Ternary operator
-
----
-
-## Loops
-- `for`
-- `while`
-- `do-while`
-- Nested loops
-- Infinite loops
-- `break`
-- `continue`
-
----
-
-## Functions
-- Function declaration
-- Function definition
-- Function prototype
-- Parameters
-- Return values
-- Pass by value
-- Inline functions
-- Recursion (introduction)
-- Function overloading (basic idea)
-
----
-
-## Scope & Linkage
-- Local variables
-- Global variables
-- Block scope
-- Static variables
-- Storage classes
-- Internal linkage
-- External linkage
-- `extern` keyword
-- Lifetime of variables
-
----
-
-## Arrays
-- One-dimensional arrays
-- Two-dimensional arrays
-- Multi-dimensional arrays
-- Array traversal
-- Searching (Linear search)
-- Sorting (Bubble sort, Selection sort)
-- Passing arrays to functions
-
----
-
-## Strings
-- C-style strings
-- Character arrays
-- String input methods
-- Basic string manipulation
-- String functions
-
----
-
-## Vectors (STL Introduction)
-- What is `vector`
-- Including `<vector>`
-- Declaring vectors
-- Accessing elements
-- `push_back()`
-- `pop_back()`
-- `size()`
-- Iterating through vectors
-- Passing vectors to functions
-
----
-
-## Pointers
-- Pointer basics
-- Address-of operator `&`
-- Dereferencing `*`
-- Pointer and arrays
-- Pointer arithmetic
-- Pointer to pointer
-- Null pointers
-- `const` pointers
-
----
-
-## Dynamic Memory & Heap
-- Stack vs Heap memory
-- `new` operator
-- `delete` operator
-- Dynamic arrays
-- Memory leaks
-- Dangling pointers
-- Best practices for memory management
+Guess number game!!
+Now before I start, I know that we have not studied these two libraries yet, but I asked ChatGPT about them and it taught me how to use them.
+The idea of the program is that the computer generates a random number from 1 to 100, and the player tries to guess it within only 5 attempts.
 
----
+At the beginning, I included three libraries:
 
-## Templates (Introduction)
-- Function templates
-- Generic programming basics
-- Template syntax
-- Advantages of templates
+The iostream library to use input and output commands such as cin and cout,
+the cstdlib library because it contains random number functions such as rand,
+and also the ctime library to get the current time and use it to generate a different number every time I run the program.
 
-Example:
-```cpp
-template <typename T>
-T add(T a, T b) {
-    return a + b;
-}
-```
----
-## File Handling
+After that, I used:
 
-- `<fstream>`
-- `ifstream`
-- `ofstream`
-- Reading from files
-- Writing to files
-- Appending data
-- File error handling
+using namespace std;
 
----
+so I can write commands in a shorter way without using std.
+Then I created a struct called Player.
 
-##  Structured Programming Principles
+I made this struct to store the player’s information in one place, such as the player’s name and the number of attempts used.
 
-- Top-down design  
-- Stepwise refinement  
-- Modularity  
-- Code reusability  
-- Avoiding `goto`  
-- Clean coding practices  
-- Code documentation  
+Inside the struct I have:
 
----
+•	name stores the player’s name. 
+•	attemptsUsed stores the number of attempts used. 
 
-# 🛠 Requirements
+After that, I created a function called checkGuess.
 
-- C++ Compiler (GCC / MinGW / Clang / MSVC)
+The job of this function is to compare the number entered by the player with the secret number.
 
-### IDE (Recommended)
+If the player guesses the correct number, it prints:
+Correct
 
-- Visual Studio  
-- Code::Blocks  
-- Dev-C++  
-- VS Code (with C++ extension)  
+If the number is greater than required, it prints:
+Lower
 
----
+which means the player needs to choose a smaller number.
+But if the number is smaller, it prints:
+Higher
 
-#  How to Compile and Run
+which means the player needs to choose a larger number.
+Then we move to the main function main, which is the place where the execution of the program starts.
 
-## Linux / Mac
+The first thing I used is:
+srand(time(0));
 
-```bash
-g++ main.cpp -o program
-./program
-```
+This is used to make the random number change every time the program runs so it does not stay the same.
 
-## Skills Students Will Gain
+After that, I created the secret number:
+int secret = rand() % 100 + 1;
 
-Logical thinking
+This means the computer generates a random number from 1 to 100 and stores it inside a variable called secret.
+After that, I defined a variable guess to store the player’s number,
+and a variable attempts and set it to 5 because the player only has five attempts.
 
-Algorithm design
+Then I created an object from the struct:
+Player player;
 
-Debugging skills
+to store the player’s data.
+Here the program asks the player to enter their name:
 
-Memory understanding
+cout << "Enter your name: ";
+cin >> player.name;
 
-Writing modular programs
+After that, I set the number of attempts used to zero at the beginning because the player has not played yet:
 
-Basic STL usage
+player.attemptsUsed = 0;
 
-Preparing for Data Structures and OOP courses
----
-#  Target Audience
+Then I created an array called guesses with size 5.
+Its purpose is to store all the numbers entered by the player so I can display them at the end.
 
-- First-year Computer Science students  
-- Software Engineering students  
-- Beginners in programming  
-- Anyone learning C++ fundamentals  
+After that, I print the start message of the game:
+Guess the number (1-100)
 
----
+Here I used a while loop,
+and as long as the number of attempts is greater than zero, the game continues.
 
-#  Important Notes
+Inside the loop:
+First, I print the remaining attempts, then the player enters a number.
 
-- This course emphasizes procedural programming.  
-- OOP topics (classes, inheritance, polymorphism) are reserved for advanced courses.  
-- Code readability and structure are strongly enforced.  
+After every input, I store the number inside the array:
+guesses[player.attemptsUsed] = guess;
 
----
+Then I increase the number of attempts used by one.
+After that, I call the function checkGuess to compare the entered number with the correct number and print the result.
+If the player guesses correctly:
+break;
 
-# License
+This means the loop stops directly because the game has ended.
+But if the player is wrong, I decrease the number of attempts by one.
+If all attempts are finished and the player did not guess the number, it prints:
+You lost
+and displays the correct number.
+At the end, I print all the guesses entered by the player using a for loop.
+Finally, I print the player’s name and the number of attempts used.
+And in the last line:
+return 0;
+This means the program ended successfully.
+In summary:
+The program is a number guessing game that uses a random number, a loop for repetition, a function for comparison, a struct to store player data, and an array to save guesses.
 
-This repository is for academic and educational purposes.  
-Students are encouraged to use and modify the code for learning.
-
----
-
-# Maintainer
-
-**Structural Programming in C++**  
-Department of AI
 
 
