@@ -13,13 +13,13 @@ struct Player {
 
 void checkGuess(int guess, int secret) {
     if (guess == secret) {
-        cout << "Correct!\n";
+        cout << "Correct"<<endl;
     }
     else if (guess > secret) {
-        cout << "Lower\n";
+        cout << "Choose Lower"<<endl;
     }
     else {
-        cout << "Higher\n";
+        cout << "Choose Higher"<<endl;
     }
 }
 
@@ -39,7 +39,7 @@ int main() {
 
     int guesses[5];
 
-    cout << "Guess the number (1 - 100)\n";
+    cout << "Guess the number (1 - 100)"<<endl;
 
     while (attempts > 0) {
         cout << "Attempts left: " << attempts << endl;
@@ -58,17 +58,18 @@ int main() {
     }
 
     if (guess != secret) {
-        cout << "You lost! The number was: " << secret << endl;
+        cout << "You lost! The number was : " << secret << endl;
     }
 
 
-    cout << "\nYour guesses were: ";
+    cout <<endl<< "Your guesses were: ";
     for (int i = 0; i < player.attemptsUsed; i++) {
         cout << guesses[i] << " ";
     }
 
-    cout << "\nPlayer: " << player.name << endl;
+    cout <<endl<< "Player: " << player.name << endl;
     cout << "Attempts used: " << player.attemptsUsed << endl;
 
     return 0;
 }
+
