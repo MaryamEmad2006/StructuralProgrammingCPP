@@ -16,10 +16,10 @@ void checkGuess(int guess, int secret) {
         cout << "Correct"<<endl;
     }
     else if (guess > secret) {
-        cout << "Choose Lower"<<endl;
+        cout << "Choose Lower Number "<<endl;
     }
     else {
-        cout << "Choose Higher"<<endl;
+        cout << "Choose Higher Number "<<endl;
     }
 }
 
@@ -58,7 +58,7 @@ int main() {
     }
 
     if (guess != secret) {
-        cout << "You lost! The number was : " << secret << endl;
+        cout << "You lost The number was : " << secret << endl;
     }
 
 
@@ -72,4 +72,3 @@ int main() {
 
     return 0;
 }
-
