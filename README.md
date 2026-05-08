@@ -1,5 +1,6 @@
 Guess number game!!
 Now before I start, I know that we have not studied these two libraries yet, but I asked ChatGPT about them and it taught me how to use them.
+
 The idea of the program is that the computer generates a random number from 1 to 100, and the player tries to guess it within only 5 attempts.
 
 At the beginning, I included three libraries:
