@@ -22,6 +22,8 @@ ctime to change the random number each time the program runs
 # Code Explanation
 
 I created a struct Player to store the player’s name and attempts used.
+
+
 Also, I made a function called checkGuess to compare the player’s input with the secret number and display:
 
 
