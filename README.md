@@ -37,6 +37,14 @@ Lower if the guess is too large
 The program uses a while loop to repeat until the player guesses correctly or runs out of attempts.
 All guesses are stored in an array and displayed at the end with the player’s information.
 
+it will start counting from 0 to a number i select.
+
+if your answer is wrong after 5 attempts you will lose.
+
+if you win the code will tell you that your answer was correct .
+
+it will display your name and your attempts that you use.
+
 
 
 
