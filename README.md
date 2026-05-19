@@ -13,9 +13,12 @@ The idea of the program is that the computer generates a random number from 1 to
 
 At the beginning, I included three libraries:
 
-iostream for input and output
-cstdlib for random number generation
-ctime to change the random number each time the program runs
+iostream for input and output.
+
+cstdlib for random number generation.
+
+ctime to change the random number each time the program runs.
+
 
 
 
